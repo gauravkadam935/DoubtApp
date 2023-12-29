@@ -1,0 +1,173 @@
+// src/Dashboard.js
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Container,
+  IconButton,
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+} from "@mui/material";
+import {
+  Menu as MenuIcon,
+  QuestionAnswer as QuestionAnswerIcon,
+} from "@mui/icons-material";
+
+import CardActions from "@mui/material/CardActions";
+
+import Button from "@mui/material/Button";
+
+const Dashboard = () => {
+  const [openDrawer, setOpenDrawer] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpenDrawer(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpenDrawer(false);
+  };
+
+  return (
+    <div>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton edge="start" color="inherit" onClick={handleDrawerOpen}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" style={{ flexGrow: 1 }}>
+            Doubt Share Dashboard
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+      <Drawer anchor="left" open={openDrawer} onClose={handleDrawerClose}>
+        <List>
+          <ListItem button onClick={handleDrawerClose}>
+            <ListItemIcon>
+              <QuestionAnswerIcon />
+            </ListItemIcon>
+            <ListItemText primary="Subjects" />
+          </ListItem>
+          <ListItem button onClick={handleDrawerClose}>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText primary="Maths" />
+          </ListItem>
+          <ListItem button onClick={handleDrawerClose}>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText primary="Physics" />
+          </ListItem>
+          <ListItem button onClick={handleDrawerClose}>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText primary="English" />
+          </ListItem>
+          <ListItem button onClick={handleDrawerClose}>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText primary="Chemistry" />
+          </ListItem>
+          <ListItem button onClick={handleDrawerClose}>
+            <ListItemIcon></ListItemIcon>
+            <ListItemText primary="Biology" />
+          </ListItem>
+        </List>
+      </Drawer>
+
+      <Container style={{ marginTop: "20px" }}>
+        <Typography variant="h4" gutterBottom>
+          Welcome to Doubt Share Dashboard
+        </Typography>
+
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia
+                sx={{ height: 240 }}
+                image="https://6565a5dbb145db43d25e359b--resplendent-cajeta-6921ba.netlify.app/HomePage/images/image1.jpg"
+                title="green iguana"
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia
+                sx={{ height: 240 }}
+                image="https://6565a5dbb145db43d25e359b--resplendent-cajeta-6921ba.netlify.app/HomePage/images/image2.jpg"
+                title="green iguana"
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia
+                sx={{ height: 240 }}
+                image="https://6565a5dbb145db43d25e359b--resplendent-cajeta-6921ba.netlify.app/HomePage/images/image3.jpg"
+                title="green iguana"
+              />
+            </Card>
+          </Grid>
+        </Grid>
+        <Typography variant="h4" gutterBottom>
+          Welcome to Doubt Share Dashboard
+        </Typography>
+
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 300 }}>
+              <CardMedia
+                sx={{ height: 250 }}
+                image="https://6565a5dbb145db43d25e359b--resplendent-cajeta-6921ba.netlify.app/HomePage/images/maths.svg"
+                title="green iguana"
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 300 }}>
+              <CardMedia
+                sx={{ height: 250 }}
+                image="https://6565a5dbb145db43d25e359b--resplendent-cajeta-6921ba.netlify.app/HomePage/images/physics.svg"
+                title="green iguana"
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 300 }}>
+              <CardMedia
+                sx={{ height: 250 }}
+                image="https://6565a5dbb145db43d25e359b--resplendent-cajeta-6921ba.netlify.app/HomePage/images/english.svg"
+                title="green iguana"
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 300 }}>
+              <CardMedia
+                sx={{ height: 250 }}
+                image="https://6565a5dbb145db43d25e359b--resplendent-cajeta-6921ba.netlify.app/HomePage/images/chemistry.svg"
+                title="green iguana"
+              />
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Card sx={{ maxWidth: 300 }}>
+              <CardMedia
+                sx={{ height: 250 }}
+                image="https://6565a5dbb145db43d25e359b--resplendent-cajeta-6921ba.netlify.app/HomePage/images/biology.svg"
+                title="green iguana"
+              />
+            </Card>
+          </Grid>
+        </Grid>
+      </Container>
+    </div>
+  );
+};
+
+export default Dashboard;
